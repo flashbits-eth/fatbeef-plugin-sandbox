@@ -1,0 +1,10 @@
+node_modules/
+coverage/
+dist/*.map
+release/
+handoff/
+tools/
+.codex/
+.agents/
+.codex-remote-attachments/
+*.log
