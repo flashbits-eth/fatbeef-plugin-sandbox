@@ -1,6 +1,6 @@
 # Fatbeef Plugin Sandbox
 
-Fatbeef Plugin Sandbox is a Tampermonkey userscript that adds OSRS/RuneLite-style quality-of-life overlays to the Solanascape browser client.
+Fatbeef Plugin Sandbox is a Tampermonkey userscript that tests OSRS/RuneLite-style quality-of-life overlays for the rev 254 browser client ahead of official implementations.  
 
 It is a local browser enhancement: it reads validated client state, renders isolated Shadow DOM overlays, and applies native menu-entry priority swaps. It does not send packets, automate gameplay, or phone home.
 
