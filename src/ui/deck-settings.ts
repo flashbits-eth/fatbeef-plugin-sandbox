@@ -84,8 +84,8 @@ export function createDeckSettingsUi(context: DeckSettingsContext): DeckSettings
   const scene = createElement("div", "deck-settings-scene");
   const gear = createElement("button", "deck-settings-gear");
   gear.type = "button";
-  gear.title = "Solanascape Deck settings";
-  gear.setAttribute("aria-label", "Open Solanascape Deck settings");
+  gear.title = "Fatbeef Plugin Sandbox settings";
+  gear.setAttribute("aria-label", "Open Fatbeef Plugin Sandbox settings");
   gear.setAttribute("aria-expanded", "false");
 
   const backdrop = createElement("div", "deck-modal-backdrop");
@@ -93,10 +93,10 @@ export function createDeckSettingsUi(context: DeckSettingsContext): DeckSettings
   const modal = createElement("section", "deck-modal");
   modal.setAttribute("role", "dialog");
   modal.setAttribute("aria-modal", "true");
-  modal.setAttribute("aria-label", "Solanascape Deck settings");
+  modal.setAttribute("aria-label", "Fatbeef Plugin Sandbox settings");
 
   const titlebar = createElement("header", "deck-modal-titlebar");
-  const title = createElement("div", "deck-modal-title", "Solanascape Deck");
+  const title = createElement("div", "deck-modal-title", "Fatbeef Plugin Sandbox");
   const close = createElement("button", "deck-modal-close");
   close.type = "button";
   close.title = "Close";

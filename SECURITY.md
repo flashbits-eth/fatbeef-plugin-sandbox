@@ -2,7 +2,7 @@
 
 Please report security issues privately to the project maintainers before opening a public issue.
 
-Solanascape Deck should remain a local-only userscript. Reports are especially useful when they show that the built script:
+Fatbeef Plugin Sandbox should remain a local-only userscript. Reports are especially useful when they show that the built script:
 
 - Creates network requests.
 - Dispatches synthetic gameplay input.

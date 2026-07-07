@@ -29,7 +29,7 @@ The skills retain the standard 21-skill ordering. If their names change, adaptiv
 
 `jm[plane][x][z]` contains terrain heights and `yn` contains bridge/render flags. Camera coordinates are `xy`, `yy`, and `zy`; `By` is yaw and `Ay` is pitch in 2048-unit angles. The deployed scene raster is 512x334 at canvas offset (4,4), with center 256x167 and projection scale 512.
 
-While enabled, Solanascape Deck casts one display-synchronized inverse camera ray from the client-maintained mouse coordinates `Lc`/`Mc` into the terrain height map, then tests at most nine neighboring polygons around the intersection. It emits at most one hovered polygon and performs no projection work while disabled. It does not call the internal `bF()` projector because that method writes scratch coordinates `Ty` and `Uy`.
+While enabled, Fatbeef Plugin Sandbox casts one display-synchronized inverse camera ray from the client-maintained mouse coordinates `Lc`/`Mc` into the terrain height map, then tests at most nine neighboring polygons around the intersection. It emits at most one hovered polygon and performs no projection work while disabled. It does not call the internal `bF()` projector because that method writes scratch coordinates `Ty` and `Uy`.
 
 The movement indicator reads the endpoint at index zero of the local player's `Mo`/`No` route arrays while `Lo` reports a non-empty route. The client consumes `Lo` as movement completes, so the indicator disappears on arrival without observing or intercepting click events. This also follows routes initiated through the minimap or interactions.
 
@@ -37,7 +37,7 @@ Ground-item labels reuse the same validated projection. The 250 ms observer scan
 
 ## Opponent health limitation
 
-The client exposes a quantized ratio and scale, not exact NPC hitpoints. Solanascape Deck therefore displays an approximate percentage. It does not claim an exact current/max HP value or use external NPC data.
+The client exposes a quantized ratio and scale, not exact NPC hitpoints. Fatbeef Plugin Sandbox therefore displays an approximate percentage. It does not claim an exact current/max HP value or use external NPC data.
 
 ## Legacy-gated collections
 
@@ -47,4 +47,4 @@ First-party scripts reference `pluginProjectWorldToScreen`, `pluginGetNearbyGrou
 
 ## Client-side boundary
 
-Solanascape Deck calls validated read-only getters. Menu Swapper changes only native menu priority/order and never invokes a selected action. Deck does not create network connections, synthesize input, attach listeners to the game canvas, inspect packets, or read canvas pixels.
+Fatbeef Plugin Sandbox calls validated read-only getters. Menu Swapper changes only native menu priority/order and never invokes a selected action. It does not create network connections, synthesize input, attach listeners to the game canvas, inspect packets, or read canvas pixels.

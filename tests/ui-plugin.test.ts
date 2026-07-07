@@ -45,10 +45,10 @@ describe("UI and plugin framework", () => {
 
   it("isolates its UI in a shadow root", () => {
     const ui = createUiRoot();
-    expect(document.getElementById("solanascape-deck-root")).toBe(ui.host);
+    expect(document.getElementById("fatbeef-plugin-sandbox-root")).toBe(ui.host);
     expect(ui.shadowRoot.querySelector("style")?.textContent).toContain("pointer-events: none");
     ui.destroy();
-    expect(document.getElementById("solanascape-deck-root")).toBeNull();
+    expect(document.getElementById("fatbeef-plugin-sandbox-root")).toBeNull();
   });
 
   it("mounts plugins and reports capability availability", () => {

@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 
 const paths = [
-  new URL("../dist/solanascape-deck.user.js", import.meta.url),
+  new URL("../dist/fatbeef-plugin-sandbox.user.js", import.meta.url),
 ];
 
 const forbidden = [

@@ -1,6 +1,6 @@
 # Privacy
 
-Solanascape Deck runs locally in your browser on `https://solanascape.online/play`.
+Fatbeef Plugin Sandbox runs locally in your browser on `https://solanascape.online/play`.
 
 The userscript does not create network requests, phone home, or send diagnostics automatically. Settings are stored in browser local storage for the Solanascape page.
 

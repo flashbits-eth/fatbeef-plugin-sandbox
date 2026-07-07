@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve Solanascape Deck.
+Thanks for helping improve Fatbeef Plugin Sandbox.
 
 Before opening a pull request:
 

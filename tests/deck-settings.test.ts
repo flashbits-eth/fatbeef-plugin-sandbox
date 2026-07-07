@@ -16,7 +16,7 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-describe("Solanascape Deck settings", () => {
+describe("Fatbeef Plugin Sandbox settings", () => {
   it("opens from the minimap gear and controls unified settings", () => {
     const canvas = document.createElement("canvas");
     canvas.id = "canvas";
@@ -54,7 +54,7 @@ describe("Solanascape Deck settings", () => {
     expect(backdrop?.hidden).toBe(true);
     gear?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
     expect(backdrop?.hidden).toBe(false);
-    expect(root.shadowRoot.querySelector(".deck-modal-title")?.textContent).toBe("Solanascape Deck");
+    expect(root.shadowRoot.querySelector(".deck-modal-title")?.textContent).toBe("Fatbeef Plugin Sandbox");
     expect(root.shadowRoot.querySelector("style")?.textContent).toContain("data:image/png;base64");
     expect([...root.shadowRoot.querySelectorAll(".deck-category-button")].some((button) => button.textContent === "General")).toBe(false);
     expect([...root.shadowRoot.querySelectorAll(".deck-category-button")].some((button) => button.textContent === "Camera")).toBe(false);

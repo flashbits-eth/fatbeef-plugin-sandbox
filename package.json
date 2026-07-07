@@ -1,16 +1,16 @@
 {
-  "name": "solanascape-deck",
+  "name": "fatbeef-plugin-sandbox",
   "version": "2.2.0",
   "type": "module",
   "description": "Unified OSRS-style overlays and native menu swaps for Solanascape.",
   "license": "MIT",
-  "homepage": "https://github.com/flashbits-eth/solanascape-deck#readme",
+  "homepage": "https://github.com/flashbits-eth/fatbeef-plugin-sandbox#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flashbits-eth/solanascape-deck.git"
+    "url": "git+https://github.com/flashbits-eth/fatbeef-plugin-sandbox.git"
   },
   "bugs": {
-    "url": "https://github.com/flashbits-eth/solanascape-deck/issues"
+    "url": "https://github.com/flashbits-eth/fatbeef-plugin-sandbox/issues"
   },
   "scripts": {
     "build": "node build.mjs",

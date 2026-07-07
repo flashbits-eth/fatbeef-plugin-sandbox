@@ -1,6 +1,6 @@
-# Solanascape Deck
+# Fatbeef Plugin Sandbox
 
-Solanascape Deck is a Tampermonkey userscript that adds OSRS/RuneLite-style quality-of-life overlays to the Solanascape browser client.
+Fatbeef Plugin Sandbox is a Tampermonkey userscript that adds OSRS/RuneLite-style quality-of-life overlays to the Solanascape browser client.
 
 It is a local browser enhancement: it reads validated client state, renders isolated Shadow DOM overlays, and applies native menu-entry priority swaps. It does not send packets, automate gameplay, or phone home.
 
@@ -25,16 +25,16 @@ It is a local browser enhancement: it reads validated client state, renders isol
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/).
 2. Open the userscript raw URL:
-   `https://raw.githubusercontent.com/flashbits-eth/solanascape-deck/main/dist/solanascape-deck.user.js`
+   `https://raw.githubusercontent.com/flashbits-eth/fatbeef-plugin-sandbox/main/dist/fatbeef-plugin-sandbox.user.js`
 3. Accept the Tampermonkey install prompt.
 4. Reload `https://solanascape.online/play`.
-5. Open Deck settings with the wrench in the upper-right of the game canvas.
+5. Open settings with the wrench in the upper-right of the game canvas.
 
 Tampermonkey will use the script metadata to check the same raw URL for updates.
 
 ## Safety
 
-Please review userscripts before installing them. Solanascape Deck is intended to stay inside this boundary:
+Please review userscripts before installing them. Fatbeef Plugin Sandbox is intended to stay inside this boundary:
 
 - No runtime network requests.
 - No packet inspection or packet modification.
@@ -58,7 +58,7 @@ npm run verify
 
 Useful commands:
 
-- `npm run build` creates `dist/solanascape-deck.user.js`.
+- `npm run build` creates `dist/fatbeef-plugin-sandbox.user.js`.
 - `npm run test` runs unit and Shadow DOM tests.
 - `npm run typecheck` runs strict TypeScript checking.
 - `npm run audit` verifies the local-only/no-synthetic-input boundary.

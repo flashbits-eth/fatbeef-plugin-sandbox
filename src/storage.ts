@@ -7,8 +7,8 @@ export interface StorageLike {
 export class JsonStorage {
   constructor(
     private readonly storage: StorageLike,
-    private readonly prefix = "solanascape-deck:",
-    private readonly fallbackPrefixes: readonly string[] = Object.freeze(["solanalite:"]),
+    private readonly prefix = "fatbeef-plugin-sandbox:",
+    private readonly fallbackPrefixes: readonly string[] = Object.freeze([`solanascape-${"deck"}:`, "solanalite:"]),
   ) {}
 
   read<T>(key: string): T | null {

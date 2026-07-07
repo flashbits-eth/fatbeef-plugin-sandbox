@@ -190,7 +190,7 @@ export interface MappingReport {
   readonly validationFailures: readonly string[];
 }
 
-export interface SolanascapeDeckFacade {
+export interface FatbeefPluginSandboxFacade {
   readonly version: string;
   getCapabilities(): CapabilityMap;
   getMappingReport(): MappingReport;
@@ -198,10 +198,10 @@ export interface SolanascapeDeckFacade {
 }
 
 declare global {
-  const __SOLANASCAPE_DECK_VERSION__: string;
+  const __FATBEEF_PLUGIN_SANDBOX_VERSION__: string;
 
   interface Window {
     gameClient?: unknown;
-    SolanascapeDeck?: SolanascapeDeckFacade;
+    FatbeefPluginSandbox?: FatbeefPluginSandboxFacade;
   }
 }

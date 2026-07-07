@@ -24,7 +24,7 @@ export class DefensiveStyleGuardPlugin implements SolanaPlugin {
     blocker.className = "sl-defensive-style-blocker";
     blocker.setAttribute("role", "status");
     blocker.setAttribute("aria-label", "Defensive combat style hidden");
-    blocker.title = "Defensive style hidden by Solanascape Deck";
+    blocker.title = "Defensive style hidden by Fatbeef Plugin Sandbox";
     blocker.addEventListener("contextmenu", (event) => event.preventDefault());
     const cross = document.createElement("span");
     cross.className = "sl-defensive-style-cross";

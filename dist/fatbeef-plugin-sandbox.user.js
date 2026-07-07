@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name         Solanascape Deck
+// @name         Fatbeef Plugin Sandbox
 // @namespace    https://solanascape.online/
 // @version      2.2.0
 // @description  Unified OSRS-style overlays, alerts, tile indicators, and native menu swaps for Solanascape.
-// @author       Solanascape Deck contributors
+// @author       Fatbeef Plugin Sandbox contributors
 // @match        https://solanascape.online/play*
-// @homepageURL  https://github.com/flashbits-eth/solanascape-deck
-// @supportURL   https://github.com/flashbits-eth/solanascape-deck/issues
-// @downloadURL  https://raw.githubusercontent.com/flashbits-eth/solanascape-deck/main/dist/solanascape-deck.user.js
-// @updateURL    https://raw.githubusercontent.com/flashbits-eth/solanascape-deck/main/dist/solanascape-deck.user.js
+// @homepageURL  https://github.com/flashbits-eth/fatbeef-plugin-sandbox
+// @supportURL   https://github.com/flashbits-eth/fatbeef-plugin-sandbox/issues
+// @downloadURL  https://raw.githubusercontent.com/flashbits-eth/fatbeef-plugin-sandbox/main/dist/fatbeef-plugin-sandbox.user.js
+// @updateURL    https://raw.githubusercontent.com/flashbits-eth/fatbeef-plugin-sandbox/main/dist/fatbeef-plugin-sandbox.user.js
 // @run-at       document-start
 // @noframes
 // @grant        unsafeWindow
@@ -5727,8 +5727,8 @@
   var LOW_PRIORITY_OFFSET = 2e3;
   var PLAYER_ACTION_OPCODES = /* @__PURE__ */ new Set([639, 499, 27, 387, 185]);
   var NPC_ACTION_OPCODES = /* @__PURE__ */ new Set([242, 209, 309, 852, 793]);
-  var PATCH_MARKER = /* @__PURE__ */ Symbol("solanascape-deck-menu-swapper");
-  var FALLBACK_MARKER = /* @__PURE__ */ Symbol("solanascape-deck-menu-fallback");
+  var PATCH_MARKER = /* @__PURE__ */ Symbol("fatbeef-plugin-sandbox-menu-swapper");
+  var FALLBACK_MARKER = /* @__PURE__ */ Symbol("fatbeef-plugin-sandbox-menu-fallback");
   var RAW_MENU_FIELDS = Object.freeze(["Tz", "Rz", "Sz"]);
   var DEFAULT_MENU_SWAPPER_SETTINGS = Object.freeze({
     enabled: true,
@@ -6456,7 +6456,7 @@
       blocker.className = "sl-defensive-style-blocker";
       blocker.setAttribute("role", "status");
       blocker.setAttribute("aria-label", "Defensive combat style hidden");
-      blocker.title = "Defensive style hidden by Solanascape Deck";
+      blocker.title = "Defensive style hidden by Fatbeef Plugin Sandbox";
       blocker.addEventListener("contextmenu", (event) => event.preventDefault());
       const cross = document.createElement("span");
       cross.className = "sl-defensive-style-cross";
@@ -7366,7 +7366,7 @@
 
   // src/storage.ts
   var JsonStorage = class {
-    constructor(storage, prefix = "solanascape-deck:", fallbackPrefixes = Object.freeze(["solanalite:"])) {
+    constructor(storage, prefix = "fatbeef-plugin-sandbox:", fallbackPrefixes = Object.freeze([`solanascape-${"deck"}:`, "solanalite:"])) {
       this.storage = storage;
       this.prefix = prefix;
       this.fallbackPrefixes = fallbackPrefixes;
@@ -7549,17 +7549,17 @@
     const scene = createElement2("div", "deck-settings-scene");
     const gear = createElement2("button", "deck-settings-gear");
     gear.type = "button";
-    gear.title = "Solanascape Deck settings";
-    gear.setAttribute("aria-label", "Open Solanascape Deck settings");
+    gear.title = "Fatbeef Plugin Sandbox settings";
+    gear.setAttribute("aria-label", "Open Fatbeef Plugin Sandbox settings");
     gear.setAttribute("aria-expanded", "false");
     const backdrop = createElement2("div", "deck-modal-backdrop");
     backdrop.hidden = true;
     const modal = createElement2("section", "deck-modal");
     modal.setAttribute("role", "dialog");
     modal.setAttribute("aria-modal", "true");
-    modal.setAttribute("aria-label", "Solanascape Deck settings");
+    modal.setAttribute("aria-label", "Fatbeef Plugin Sandbox settings");
     const titlebar = createElement2("header", "deck-modal-titlebar");
-    const title = createElement2("div", "deck-modal-title", "Solanascape Deck");
+    const title = createElement2("div", "deck-modal-title", "Fatbeef Plugin Sandbox");
     const close = createElement2("button", "deck-modal-close");
     close.type = "button";
     close.title = "Close";
@@ -7815,15 +7815,15 @@
   });
 
   // src/ui/styles.ts
-  var SOLANASCAPE_DECK_STYLES = `
+  var FATBEEF_PLUGIN_SANDBOX_STYLES = `
 @font-face {
-  font-family: "Solanascape Deck RuneScape";
+  font-family: "Fatbeef Plugin Sandbox RuneScape";
   src: url("${runescape_default}") format("truetype");
   font-display: block;
 }
 
 @font-face {
-  font-family: "Solanascape Deck RuneScape Small";
+  font-family: "Fatbeef Plugin Sandbox RuneScape Small";
   src: url("${runescape_small_default}") format("truetype");
   font-display: block;
 }
@@ -7948,7 +7948,7 @@
 .sl-xp-drop-layer, .sl-attack-style-layer, .sl-tile-layer, .sl-combat-layer, .sl-ground-item-layer, .sl-player-name-layer { contain: layout paint; overflow: hidden; pointer-events: none; position: fixed; }
 .sl-xp-scene { height: 503px; position: absolute; transform: scale(var(--sl-canvas-scale-x, 1), var(--sl-canvas-scale-y, 1)); transform-origin: left top; width: 765px; }
 .sl-xp-drop-lane { align-items: flex-end; display: flex; flex-direction: column; gap: 1px; position: absolute; right: 253px; top: 72px; }
-.sl-xp-drop { align-items: center; animation: sl-xp-drop 1.75s cubic-bezier(.2, .72, .35, 1) forwards; color: white; display: flex; filter: drop-shadow(1px 1px #000); font-family: "Solanascape Deck RuneScape Small", sans-serif; font-kerning: none; font-size: 9px; gap: 2px; line-height: 10px; text-rendering: optimizeSpeed; white-space: nowrap; }
+.sl-xp-drop { align-items: center; animation: sl-xp-drop 1.75s cubic-bezier(.2, .72, .35, 1) forwards; color: white; display: flex; filter: drop-shadow(1px 1px #000); font-family: "Fatbeef Plugin Sandbox RuneScape Small", sans-serif; font-kerning: none; font-size: 9px; gap: 2px; line-height: 10px; text-rendering: optimizeSpeed; white-space: nowrap; }
 .sl-xp-drop-icon { height: 10px; image-rendering: pixelated; object-fit: contain; width: 10px; }
 .sl-xp-drop-value { color: #ff981f; }
 @keyframes sl-xp-drop {
@@ -7966,7 +7966,7 @@
 .sl-xp-globe-progress { fill: none; stroke: #ffd42a; stroke-linecap: butt; stroke-width: 2; }
 .sl-xp-globe-icon { height: 12px; image-rendering: pixelated; left: 5.5px; object-fit: contain; position: absolute; top: 5.5px; width: 12px; z-index: 1; }
 .sl-xp-globe:hover .sl-xp-globe-background { fill: rgba(0,0,0,.706); }
-.sl-xp-globe-tooltip { background: rgba(54, 48, 41, .46); border: 1px solid rgba(24,20,17,.68); box-shadow: inset 0 0 0 1px rgba(102,90,75,.28), 1px 1px 2px rgba(0,0,0,.48); color: white; display: none; font-family: "Solanascape Deck RuneScape Small", sans-serif; font-kerning: none; font-size: 8px; left: 50%; line-height: 9px; min-width: 79px; padding: 3px 4px; position: absolute; text-rendering: optimizeSpeed; text-shadow: 1px 1px #000; top: 24px; transform: translateX(-50%); white-space: nowrap; z-index: 2; }
+.sl-xp-globe-tooltip { background: rgba(54, 48, 41, .46); border: 1px solid rgba(24,20,17,.68); box-shadow: inset 0 0 0 1px rgba(102,90,75,.28), 1px 1px 2px rgba(0,0,0,.48); color: white; display: none; font-family: "Fatbeef Plugin Sandbox RuneScape Small", sans-serif; font-kerning: none; font-size: 8px; left: 50%; line-height: 9px; min-width: 79px; padding: 3px 4px; position: absolute; text-rendering: optimizeSpeed; text-shadow: 1px 1px #000; top: 24px; transform: translateX(-50%); white-space: nowrap; z-index: 2; }
 .sl-xp-globe:hover .sl-xp-globe-tooltip { display: block; }
 .sl-xp-tooltip-row { display: flex; gap: 6px; justify-content: space-between; }
 .sl-xp-tooltip-label { color: #ff981f; }
@@ -7997,7 +7997,7 @@
   color: #ffff00;
   cursor: not-allowed;
   display: flex;
-  font-family: "Solanascape Deck RuneScape Small", sans-serif;
+  font-family: "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   font-size: 10px;
   gap: 7px;
   height: 44px;
@@ -8026,7 +8026,7 @@
   color: #fff;
   /* RuneLite uses this TTF at Java2D size 16. Its browser glyph metrics render
      at roughly twice that visual height, so 8 CSS px is the matching scale. */
-  font: 8px/8px "Solanascape Deck RuneScape Small", sans-serif;
+  font: 8px/8px "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   font-kerning: none;
   left: 0;
   position: absolute;
@@ -8039,7 +8039,7 @@
 }
 .sl-player-name-label {
   color: #fffd7a;
-  font: 8px/8px "Solanascape Deck RuneScape Small", sans-serif;
+  font: 8px/8px "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   font-kerning: none;
   left: 0;
   position: absolute;
@@ -8069,7 +8069,7 @@
 }
 .sl-panel.sl-lite-panel { min-width: 0; width: 220px; }
 
-/* Unified Solanascape Deck settings interface. The frame, buttons, wrench,
+/* Unified Fatbeef Plugin Sandbox settings interface. The frame, buttons, wrench,
    close control, and checkboxes use authentic OSRS sprites. */
 .deck-settings-layer {
   contain: layout paint;
@@ -8118,7 +8118,7 @@
   border-image: url("${OSRS_UI_ASSETS.border}") 9 repeat;
   color: white;
   display: grid;
-  font-family: "Solanascape Deck RuneScape Small", sans-serif;
+  font-family: "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   font-size: 11px;
   grid-template-rows: 24px 1fr;
   height: min(302px, calc(100% - 16px));
@@ -8172,7 +8172,7 @@
   border: 0;
   color: #ff981f;
   cursor: pointer;
-  font: 11px "Solanascape Deck RuneScape Small", sans-serif;
+  font: 11px "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   min-height: 24px;
   padding: 1px 4px;
   text-shadow: 1px 1px #000;
@@ -8233,7 +8233,7 @@
   border: 1px solid rgba(94, 82, 65, .72);
   color: white;
   flex: 0 0 116px;
-  font: 11px "Solanascape Deck RuneScape Small", sans-serif;
+  font: 11px "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   min-width: 0;
   padding: 3px 4px;
   text-shadow: 1px 1px #000;
@@ -8257,14 +8257,14 @@
 
   // src/ui/root.ts
   function createUiRoot(documentRef = document) {
-    const existing = documentRef.getElementById("solanascape-deck-root");
+    const existing = documentRef.getElementById("fatbeef-plugin-sandbox-root");
     existing?.remove();
     const host = documentRef.createElement("div");
-    host.id = "solanascape-deck-root";
-    host.setAttribute("data-solanascape-deck", "v1");
+    host.id = "fatbeef-plugin-sandbox-root";
+    host.setAttribute("data-fatbeef-plugin-sandbox", "v1");
     const shadowRoot = host.attachShadow({ mode: "open" });
     const style = documentRef.createElement("style");
-    style.textContent = SOLANASCAPE_DECK_STYLES;
+    style.textContent = FATBEEF_PLUGIN_SANDBOX_STYLES;
     shadowRoot.append(style);
     (documentRef.body ?? documentRef.documentElement).append(host);
     return Object.freeze({ host, shadowRoot, destroy: () => host.remove() });
@@ -8292,7 +8292,7 @@
   function migrateStandaloneMenuSettings(store, storage, hadDeckSettings) {
     if (hadDeckSettings) return;
     try {
-      const raw = storage.getItem("solanascape-deck.menu-swapper.settings.v1") ?? storage.getItem("solanalite.menu-swapper.settings.v1");
+      const raw = storage.getItem("fatbeef-plugin-sandbox.menu-swapper.settings.v1") ?? storage.getItem(`solanascape-${"deck"}.menu-swapper.settings.v1`) ?? storage.getItem("solanalite.menu-swapper.settings.v1");
       if (!raw) return;
       const legacy = JSON.parse(raw);
       const boolean = (key, fallback) => typeof legacy[key] === "boolean" ? legacy[key] : fallback;
@@ -8308,20 +8308,20 @@
     }
   }
   function migrateLegacyDeckSettings(storage) {
-    if (storage.getItem("solanascape-deck:settings:v12") !== null) return;
+    if (storage.getItem("fatbeef-plugin-sandbox:settings:v12") !== null) return;
     for (const version of [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) {
       const key = `settings:v${version}`;
-      const legacy = storage.getItem(`solanalite:${key}`);
+      const legacy = storage.getItem(`solanascape-${"deck"}:${key}`) ?? storage.getItem(`solanalite:${key}`);
       if (legacy === null) continue;
-      storage.setItem(`solanascape-deck:${key}`, legacy);
+      storage.setItem(`fatbeef-plugin-sandbox:${key}`, legacy);
       return;
     }
   }
   function bootstrap() {
     const pageWindow = typeof unsafeWindow === "undefined" ? window : unsafeWindow;
-    if (pageWindow.SolanascapeDeck) return;
+    if (pageWindow.FatbeefPluginSandbox) return;
     const ui = createUiRoot();
-    const hadDeckSettings = window.localStorage.getItem("solanascape-deck:settings:v12") !== null || window.localStorage.getItem("solanascape-deck:settings:v11") !== null || window.localStorage.getItem("solanascape-deck:settings:v10") !== null || window.localStorage.getItem("solanalite:settings:v12") !== null || window.localStorage.getItem("solanalite:settings:v11") !== null || window.localStorage.getItem("solanalite:settings:v10") !== null || window.localStorage.getItem("solanalite:settings:v9") !== null || window.localStorage.getItem("solanalite:settings:v8") !== null || window.localStorage.getItem("solanalite:settings:v7") !== null;
+    const hadDeckSettings = window.localStorage.getItem("fatbeef-plugin-sandbox:settings:v12") !== null || window.localStorage.getItem("fatbeef-plugin-sandbox:settings:v11") !== null || window.localStorage.getItem("fatbeef-plugin-sandbox:settings:v10") !== null || window.localStorage.getItem(`solanascape-${"deck"}:settings:v12`) !== null || window.localStorage.getItem(`solanascape-${"deck"}:settings:v11`) !== null || window.localStorage.getItem(`solanascape-${"deck"}:settings:v10`) !== null || window.localStorage.getItem("solanalite:settings:v12") !== null || window.localStorage.getItem("solanalite:settings:v11") !== null || window.localStorage.getItem("solanalite:settings:v10") !== null || window.localStorage.getItem("solanalite:settings:v9") !== null || window.localStorage.getItem("solanalite:settings:v8") !== null || window.localStorage.getItem("solanalite:settings:v7") !== null;
     migrateLegacyDeckSettings(window.localStorage);
     const settings = new SettingsStore(new JsonStorage(window.localStorage));
     migrateStandaloneMenuSettings(settings, window.localStorage, hadDeckSettings);
@@ -8383,7 +8383,7 @@
       getMappingReport: () => cloneReport(createMappingReport(pageWindow.gameClient, observer.getAdapter())),
       resetXpSession: () => xpTracker.resetSession()
     });
-    Object.defineProperty(pageWindow, "SolanascapeDeck", {
+    Object.defineProperty(pageWindow, "FatbeefPluginSandbox", {
       configurable: true,
       enumerable: false,
       value: facade,

@@ -1,9 +1,9 @@
 # Third-party presentation assets
 
-Solanascape Deck bundles RuneLite's `runescape.ttf`, `runescape_small.ttf`, and 21 skill-icon PNGs from the
+Fatbeef Plugin Sandbox bundles RuneLite's `runescape.ttf`, `runescape_small.ttf`, and 21 skill-icon PNGs from the
 official `runelite/runelite` repository. RuneLite is licensed under the BSD
 2-Clause License. The assets are embedded into the generated userscript as data
-URLs, so Solanascape Deck performs no runtime asset or network requests.
+URLs, so Fatbeef Plugin Sandbox performs no runtime asset or network requests.
 
 Source paths:
 

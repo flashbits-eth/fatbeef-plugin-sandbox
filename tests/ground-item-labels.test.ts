@@ -61,7 +61,7 @@ describe("ground item labels", () => {
     const label = ui.shadowRoot.querySelector<HTMLElement>(".sl-ground-item-label");
     expect(label?.textContent).toBe("Coins (12.4K)");
     expect(label?.style.left).toBe("400px");
-    expect(ui.shadowRoot.querySelector("style")?.textContent).toContain('font: 8px/8px "Solanascape Deck RuneScape Small"');
+    expect(ui.shadowRoot.querySelector("style")?.textContent).toContain('font: 8px/8px "Fatbeef Plugin Sandbox RuneScape Small"');
     plugin.unmount();
     ui.destroy();
   });

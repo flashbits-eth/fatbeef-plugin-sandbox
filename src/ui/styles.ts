@@ -2,15 +2,15 @@ import runescapeFont from "../assets/runescape.ttf";
 import runescapeSmallFont from "../assets/runescape_small.ttf";
 import { OSRS_UI_ASSETS } from "./osrs-assets";
 
-export const SOLANASCAPE_DECK_STYLES = `
+export const FATBEEF_PLUGIN_SANDBOX_STYLES = `
 @font-face {
-  font-family: "Solanascape Deck RuneScape";
+  font-family: "Fatbeef Plugin Sandbox RuneScape";
   src: url("${runescapeFont}") format("truetype");
   font-display: block;
 }
 
 @font-face {
-  font-family: "Solanascape Deck RuneScape Small";
+  font-family: "Fatbeef Plugin Sandbox RuneScape Small";
   src: url("${runescapeSmallFont}") format("truetype");
   font-display: block;
 }
@@ -135,7 +135,7 @@ export const SOLANASCAPE_DECK_STYLES = `
 .sl-xp-drop-layer, .sl-attack-style-layer, .sl-tile-layer, .sl-combat-layer, .sl-ground-item-layer, .sl-player-name-layer { contain: layout paint; overflow: hidden; pointer-events: none; position: fixed; }
 .sl-xp-scene { height: 503px; position: absolute; transform: scale(var(--sl-canvas-scale-x, 1), var(--sl-canvas-scale-y, 1)); transform-origin: left top; width: 765px; }
 .sl-xp-drop-lane { align-items: flex-end; display: flex; flex-direction: column; gap: 1px; position: absolute; right: 253px; top: 72px; }
-.sl-xp-drop { align-items: center; animation: sl-xp-drop 1.75s cubic-bezier(.2, .72, .35, 1) forwards; color: white; display: flex; filter: drop-shadow(1px 1px #000); font-family: "Solanascape Deck RuneScape Small", sans-serif; font-kerning: none; font-size: 9px; gap: 2px; line-height: 10px; text-rendering: optimizeSpeed; white-space: nowrap; }
+.sl-xp-drop { align-items: center; animation: sl-xp-drop 1.75s cubic-bezier(.2, .72, .35, 1) forwards; color: white; display: flex; filter: drop-shadow(1px 1px #000); font-family: "Fatbeef Plugin Sandbox RuneScape Small", sans-serif; font-kerning: none; font-size: 9px; gap: 2px; line-height: 10px; text-rendering: optimizeSpeed; white-space: nowrap; }
 .sl-xp-drop-icon { height: 10px; image-rendering: pixelated; object-fit: contain; width: 10px; }
 .sl-xp-drop-value { color: #ff981f; }
 @keyframes sl-xp-drop {
@@ -153,7 +153,7 @@ export const SOLANASCAPE_DECK_STYLES = `
 .sl-xp-globe-progress { fill: none; stroke: #ffd42a; stroke-linecap: butt; stroke-width: 2; }
 .sl-xp-globe-icon { height: 12px; image-rendering: pixelated; left: 5.5px; object-fit: contain; position: absolute; top: 5.5px; width: 12px; z-index: 1; }
 .sl-xp-globe:hover .sl-xp-globe-background { fill: rgba(0,0,0,.706); }
-.sl-xp-globe-tooltip { background: rgba(54, 48, 41, .46); border: 1px solid rgba(24,20,17,.68); box-shadow: inset 0 0 0 1px rgba(102,90,75,.28), 1px 1px 2px rgba(0,0,0,.48); color: white; display: none; font-family: "Solanascape Deck RuneScape Small", sans-serif; font-kerning: none; font-size: 8px; left: 50%; line-height: 9px; min-width: 79px; padding: 3px 4px; position: absolute; text-rendering: optimizeSpeed; text-shadow: 1px 1px #000; top: 24px; transform: translateX(-50%); white-space: nowrap; z-index: 2; }
+.sl-xp-globe-tooltip { background: rgba(54, 48, 41, .46); border: 1px solid rgba(24,20,17,.68); box-shadow: inset 0 0 0 1px rgba(102,90,75,.28), 1px 1px 2px rgba(0,0,0,.48); color: white; display: none; font-family: "Fatbeef Plugin Sandbox RuneScape Small", sans-serif; font-kerning: none; font-size: 8px; left: 50%; line-height: 9px; min-width: 79px; padding: 3px 4px; position: absolute; text-rendering: optimizeSpeed; text-shadow: 1px 1px #000; top: 24px; transform: translateX(-50%); white-space: nowrap; z-index: 2; }
 .sl-xp-globe:hover .sl-xp-globe-tooltip { display: block; }
 .sl-xp-tooltip-row { display: flex; gap: 6px; justify-content: space-between; }
 .sl-xp-tooltip-label { color: #ff981f; }
@@ -184,7 +184,7 @@ export const SOLANASCAPE_DECK_STYLES = `
   color: #ffff00;
   cursor: not-allowed;
   display: flex;
-  font-family: "Solanascape Deck RuneScape Small", sans-serif;
+  font-family: "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   font-size: 10px;
   gap: 7px;
   height: 44px;
@@ -213,7 +213,7 @@ export const SOLANASCAPE_DECK_STYLES = `
   color: #fff;
   /* RuneLite uses this TTF at Java2D size 16. Its browser glyph metrics render
      at roughly twice that visual height, so 8 CSS px is the matching scale. */
-  font: 8px/8px "Solanascape Deck RuneScape Small", sans-serif;
+  font: 8px/8px "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   font-kerning: none;
   left: 0;
   position: absolute;
@@ -226,7 +226,7 @@ export const SOLANASCAPE_DECK_STYLES = `
 }
 .sl-player-name-label {
   color: #fffd7a;
-  font: 8px/8px "Solanascape Deck RuneScape Small", sans-serif;
+  font: 8px/8px "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   font-kerning: none;
   left: 0;
   position: absolute;
@@ -256,7 +256,7 @@ export const SOLANASCAPE_DECK_STYLES = `
 }
 .sl-panel.sl-lite-panel { min-width: 0; width: 220px; }
 
-/* Unified Solanascape Deck settings interface. The frame, buttons, wrench,
+/* Unified Fatbeef Plugin Sandbox settings interface. The frame, buttons, wrench,
    close control, and checkboxes use authentic OSRS sprites. */
 .deck-settings-layer {
   contain: layout paint;
@@ -305,7 +305,7 @@ export const SOLANASCAPE_DECK_STYLES = `
   border-image: url("${OSRS_UI_ASSETS.border}") 9 repeat;
   color: white;
   display: grid;
-  font-family: "Solanascape Deck RuneScape Small", sans-serif;
+  font-family: "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   font-size: 11px;
   grid-template-rows: 24px 1fr;
   height: min(302px, calc(100% - 16px));
@@ -359,7 +359,7 @@ export const SOLANASCAPE_DECK_STYLES = `
   border: 0;
   color: #ff981f;
   cursor: pointer;
-  font: 11px "Solanascape Deck RuneScape Small", sans-serif;
+  font: 11px "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   min-height: 24px;
   padding: 1px 4px;
   text-shadow: 1px 1px #000;
@@ -420,7 +420,7 @@ export const SOLANASCAPE_DECK_STYLES = `
   border: 1px solid rgba(94, 82, 65, .72);
   color: white;
   flex: 0 0 116px;
-  font: 11px "Solanascape Deck RuneScape Small", sans-serif;
+  font: 11px "Fatbeef Plugin Sandbox RuneScape Small", sans-serif;
   min-width: 0;
   padding: 3px 4px;
   text-shadow: 1px 1px #000;

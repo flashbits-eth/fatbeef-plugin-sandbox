@@ -1,8 +1,8 @@
 const LOW_PRIORITY_OFFSET = 2_000;
 const PLAYER_ACTION_OPCODES = new Set([639, 499, 27, 387, 185]);
 const NPC_ACTION_OPCODES = new Set([242, 209, 309, 852, 793]);
-const PATCH_MARKER = Symbol("solanascape-deck-menu-swapper");
-const FALLBACK_MARKER = Symbol("solanascape-deck-menu-fallback");
+const PATCH_MARKER = Symbol("fatbeef-plugin-sandbox-menu-swapper");
+const FALLBACK_MARKER = Symbol("fatbeef-plugin-sandbox-menu-fallback");
 const RAW_MENU_FIELDS = Object.freeze(["Tz", "Rz", "Sz"] as const);
 
 export interface MenuSwapperSettings {

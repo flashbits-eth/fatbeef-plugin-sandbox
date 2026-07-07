@@ -1,6 +1,6 @@
 # First-party integration guide
 
-This package is structured so Solanascape Deck can move from a userscript into the browser client without carrying Tampermonkey-specific assumptions through the feature code.
+This package is structured so Fatbeef Plugin Sandbox can move from a userscript into the browser client without carrying Tampermonkey-specific assumptions through the feature code.
 
 ## Recommended integration order
 

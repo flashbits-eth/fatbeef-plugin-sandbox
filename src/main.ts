@@ -12,7 +12,7 @@ import { PlayerNamesPlugin } from "./plugins/player-names";
 import { TileOverlayPlugin } from "./plugins/tile-overlay";
 import { XpTrackerPlugin } from "./plugins/xp-tracker";
 import { JsonStorage, SettingsStore, type UiSettings } from "./storage";
-import type { CapabilityMap, SnapshotSlice, SolanascapeDeckFacade } from "./types";
+import type { CapabilityMap, SnapshotSlice, FatbeefPluginSandboxFacade } from "./types";
 import { createDeckSettingsUi } from "./ui/deck-settings";
 import { createUiRoot } from "./ui/root";
 
@@ -39,7 +39,8 @@ function menuSettings(settings: UiSettings): MenuSwapperSettings {
 function migrateStandaloneMenuSettings(store: SettingsStore, storage: Storage, hadDeckSettings: boolean): void {
   if (hadDeckSettings) return;
   try {
-    const raw = storage.getItem("solanascape-deck.menu-swapper.settings.v1") ??
+    const raw = storage.getItem("fatbeef-plugin-sandbox.menu-swapper.settings.v1") ??
+      storage.getItem(`solanascape-${"deck"}.menu-swapper.settings.v1`) ??
       storage.getItem("solanalite.menu-swapper.settings.v1");
     if (!raw) return;
     const legacy = JSON.parse(raw) as Record<string, unknown>;
@@ -58,24 +59,27 @@ function migrateStandaloneMenuSettings(store: SettingsStore, storage: Storage, h
 }
 
 function migrateLegacyDeckSettings(storage: Storage): void {
-  if (storage.getItem("solanascape-deck:settings:v12") !== null) return;
+  if (storage.getItem("fatbeef-plugin-sandbox:settings:v12") !== null) return;
   for (const version of [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]) {
     const key = `settings:v${version}`;
-    const legacy = storage.getItem(`solanalite:${key}`);
+    const legacy = storage.getItem(`solanascape-${"deck"}:${key}`) ?? storage.getItem(`solanalite:${key}`);
     if (legacy === null) continue;
-    storage.setItem(`solanascape-deck:${key}`, legacy);
+    storage.setItem(`fatbeef-plugin-sandbox:${key}`, legacy);
     return;
   }
 }
 
 function bootstrap(): void {
   const pageWindow = (typeof unsafeWindow === "undefined" ? window : unsafeWindow) as Window;
-  if (pageWindow.SolanascapeDeck) return;
+  if (pageWindow.FatbeefPluginSandbox) return;
 
   const ui = createUiRoot();
-  const hadDeckSettings = window.localStorage.getItem("solanascape-deck:settings:v12") !== null ||
-    window.localStorage.getItem("solanascape-deck:settings:v11") !== null ||
-    window.localStorage.getItem("solanascape-deck:settings:v10") !== null ||
+  const hadDeckSettings = window.localStorage.getItem("fatbeef-plugin-sandbox:settings:v12") !== null ||
+    window.localStorage.getItem("fatbeef-plugin-sandbox:settings:v11") !== null ||
+    window.localStorage.getItem("fatbeef-plugin-sandbox:settings:v10") !== null ||
+    window.localStorage.getItem(`solanascape-${"deck"}:settings:v12`) !== null ||
+    window.localStorage.getItem(`solanascape-${"deck"}:settings:v11`) !== null ||
+    window.localStorage.getItem(`solanascape-${"deck"}:settings:v10`) !== null ||
     window.localStorage.getItem("solanalite:settings:v12") !== null ||
     window.localStorage.getItem("solanalite:settings:v11") !== null ||
     window.localStorage.getItem("solanalite:settings:v10") !== null ||
@@ -139,13 +143,13 @@ function bootstrap(): void {
     plugins.update(update);
   });
 
-  const facade: SolanascapeDeckFacade = Object.freeze({
-    version: __SOLANASCAPE_DECK_VERSION__,
+  const facade: FatbeefPluginSandboxFacade = Object.freeze({
+    version: __FATBEEF_PLUGIN_SANDBOX_VERSION__,
     getCapabilities: () => cloneCapabilities(observer.getCapabilities()),
     getMappingReport: () => cloneReport(createMappingReport(pageWindow.gameClient, observer.getAdapter())),
     resetXpSession: () => xpTracker.resetSession(),
   });
-  Object.defineProperty(pageWindow, "SolanascapeDeck", {
+  Object.defineProperty(pageWindow, "FatbeefPluginSandbox", {
     configurable: true,
     enumerable: false,
     value: facade,

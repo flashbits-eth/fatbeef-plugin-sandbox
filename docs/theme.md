@@ -1,4 +1,4 @@
-# Solanascape Deck theme reference
+# Fatbeef Plugin Sandbox theme reference
 
 The unified settings window uses authentic OSRS interface sprites from the BSD-licensed RuneLite [Resource Packs](https://github.com/melkypie/resource-packs/tree/sample-vanilla) sample pack:
 
